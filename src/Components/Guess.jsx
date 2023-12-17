@@ -11,7 +11,7 @@ const Guess = () => {
     return Math.floor(Math.random() * 10) + 1;
   }
 
-  console.log(number);
+  // console.log(number);
 
   const handleInputChange = (event) => {
     setGuess(event.target.value);
@@ -20,8 +20,8 @@ const Guess = () => {
   const handleFormSubmit = (event) => {
     event.preventDefault();
 
-    const userGuess = parseInt(guess, 10);
-    console.log(userGuess);
+    const userGuess = parseInt(guess);
+    // console.log(userGuess);
     // if check to see if input is valid
     // redundant since min max in the input already checked
 
@@ -38,20 +38,20 @@ const Guess = () => {
       setResponse(
         `Congratulations! You guessed the correct number in ${trial + 1} trial.`
       );
-      console.log(response);
+      // console.log(response);
 
       setGameOver(true);
     } else if (trial === 2) {
       setResponse(` Oooops! Game over! The correct number was ${number}.`);
       setGameOver(true);
-      console.log(response);
+      // console.log(response);
     } else {
       setResponse(
         `Oops! wrong guess. You have ${2 - trial} ${
           trial === 1 ? "attempt" : "trial"
         } left.`
       );
-      console.log(response);
+      // console.log(response);
     }
   };
 
